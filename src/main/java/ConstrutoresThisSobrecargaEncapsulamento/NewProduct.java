@@ -17,6 +17,18 @@ public class NewProduct {
         this.quantity = quantity;
     }
 
+    // SOBRECARGA – Podemos disponibilizar mais de uma versão de um construtor,
+    // desde que apresentem diferenças na lista de parâmetros.
+    // Isso permite instanciar objetos de maneiras distintas, conforme a necessidade.
+    public NewProduct(String name, double price){
+        this.name = name;
+        this.price = price;
+    }
+
+    //Também é possível incluirmos um constutor padrão
+    public NewProduct(){}
+
+
     public double TotalValueInStock() {
         return price * quantity;
     }
