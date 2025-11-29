@@ -1,0 +1,104 @@
+Classes são tipo referência
+Variáveis cujo tipo são classes não devem ser entendidas como caixas , mas sim como "tentáculos" (ponteiros)
+para caixa
+
+Product p1, p2;         -> vão estar alocadas no Stack
+
+O stack é a área de memória que aloca as variáveis declaradas.
+
+Ao instanciar p1, p1 = new Product("TV", 900.00, 0); vai ser alocado um objeto em outra área de memória chamada
+Heap, o heap (local onde são armazenados os objetos em tempo de execução), chamado alocação dinâmica de memória
+
+p1 então nao alocara as informações, ela guardará um endereço de memória (Ex.:0x100358) correspondente ao local de memória
+onde o objeto foi alocado, ou seja, a variavel p1 terá um stack de 0x100358 que apontará para as informações armazenadas
+no Heap
+
+Váriaveis de tipo classe, são referências ou ponteiros para o endereço onde contém o objeto.
+
+Valor "NULL"
+tipos de referência permitem o valor null
+
+ao dizer que p2 = null, informamos que a variavel p2 não aponta pra nenhum local da memória
+
+Tipos primitivos são tipo valor - Tipo valor são caixas e não ponteiros, portanto, ao declararmos
+
+double x, y;
+x = 10;
+
+a variavel x entrará no stack, diferentemente da referencia que antes, guardava o local heap da memória, da mesma forma,
+se  dizermos que
+y = x
+y recebe uma cópia de x no stack, portanto ambos os stacks serão 10.
+
+## Explicação GPT:
+Texto Revisado e Corrigido
+Classes são tipos de referência.
+Variáveis cujo tipo é uma classe não devem ser entendidas como “caixas que guardam dados”, mas sim como tentáculos (ou
+ponteiros ocultos) que apontam para uma caixa que está em outro lugar da memória.
+Quando escrevemos:
+
+Product p1, p2;
+
+essas variáveis são criadas na stack.
+
+A stack é a área de memória onde ficam as variáveis locais e referências (mas não os objetos).
+
+Instanciação e Heap
+
+Quando fazemos:
+
+p1 = new Product("TV", 900.00, 0);
+
+um objeto é criado em outra área de memória chamada heap, que é onde os objetos ficam durante a execução do programa.
+Esse processo é chamado de alocação dinâmica de memória.
+
+Depois disso:
+p1 passa a armazenar um endereço de memória (conceitualmente algo como 0x100358)
+
+esse endereço aponta para o objeto Product que está no heap
+
+Ou seja:
+
+a variável p1, na stack, não contém o objeto
+
+ela contém apenas a referência para o local onde o objeto está armazenado (heap)
+
+Variáveis de tipo classe são, portanto, referências (ou ponteiros ocultos) para o endereço onde o objeto está.
+
+🔹 Valor null
+
+Tipos de referência permitem o valor null.
+
+Se fizermos:
+
+p2 = null;
+
+
+isso significa que a variável p2 não aponta para nenhum lugar da memória.
+É um “tentáculo solto”, sem objeto.
+
+🔹 Tipos primitivos são tipo valor
+
+Tipos primitivos são tipos valor, e não ponteiros.
+Eles guardam diretamente o valor dentro da stack.
+
+Exemplo:
+
+double x, y;
+x = 10;
+
+Aqui:
+
+x é armazenado na stacke contém diretamente o valor 10 (não um endereço)
+E se fizermos:
+y = x;
+
+então y receberá uma cópia do valor de x.
+
+Portanto:
+
+x = 10
+y = 10
+
+são valores independentes, cada um na sua própria posição da stack
+não existe compartilhamento de endereço entre variáveis primitivas

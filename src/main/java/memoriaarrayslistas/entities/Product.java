@@ -1,10 +1,10 @@
-package memoriaarrayslistas;
+package memoriaarrayslistas.entities;
 
 public class Product {
     public String name;
     public double price;
 
-    Product(String name, double price){
+    public Product(String name, double price){
         this.name = name;
         this.price = price;
     }

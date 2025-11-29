@@ -1,0 +1,69 @@
+Garbage collector
+
+O Garbage Collector é um mecanismo automático das linguagens gerenciadas (como Java, C#, Python) que tem a função de
+limpar da memória os objetos que não estão mais sendo usados.
+
+O que ele faz?
+
+Monitora os objetos criados no heap
+
+Identifica objetos que não têm mais nenhuma referência apontando para eles
+
+Libera a memória ocupada por esses objetos automaticamente
+
+Evita memory leaks (vazamentos de memória)
+
+Como ele decide o que apagar?
+
+Se um objeto não for mais alcançável por nenhuma variável → vira lixo → GC remove.
+Ex.:
+
+Product p1 = new Product("TV");
+p1 = null;
+Quando fazemos p1 = null, o objeto Product("TV") não tem mais ninguém apontando para ele.
+→ O GC pode apagar esse objeto quando achar necessário.
+
+Pontos importantes
+O programador não controla o momento exato da limpeza
+A limpeza é automática
+Otimiza o uso de memória do programa
+Só funciona em linguagens gerenciadas (Java, C#, Python)
+Em C/C++, não existe GC — o programador controla a memória manualmente
+
+##########################################Escopo Local################################################################
+
+O escopo local define onde uma variável existe e até quando ela vive.
+
+Definição
+
+Uma variável criada dentro de um bloco (por exemplo, dentro de um método ou dentro de chaves { }) só existe dentro desse
+bloco.
+Assim que a execução sai do bloco → a variável morre (é destruída da stack).
+Exemplo:
+void teste() {
+    int x = 10;  // x existe apenas dentro deste método
+
+    if (x > 5) {
+        int y = 20;  // y existe apenas dentro deste 'if'
+    }
+
+    // aqui, y não existe mais
+}
+
+Onde essas variáveis ficam?
+
+Variáveis locais ficam na stack
+
+São destruídas automaticamente ao sair do bloco
+
+Por que isso importa?
+
+Mantém organização
+Evita conflitos de nomes
+Melhora desempenho
+Permite que o Garbage Collector determine corretamente quando objetos não são mais utilizáveis (quando referências de
+ escopo local desaparecem)
+
+
+
+
