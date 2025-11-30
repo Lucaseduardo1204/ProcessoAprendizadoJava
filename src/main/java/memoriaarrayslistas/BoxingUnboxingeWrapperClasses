@@ -1,0 +1,37 @@
+## Boxing
+
+É o processo de conversão de um objeto tipo valor para um objeto tipo referência compatível
+Ex.:
+
+int x=20;  -> 20 será armazenado no stack da memória (tipo valor)
+
+Agora, caso fizermos:
+Object obj = x;
+
+No stack da memória será criado a variável obj, porem o valor (no caso 20), será armazenado no heap da memória. Esse processo é
+chamado de boxing, o "encaixotamento" de um tipo valor em um objeto
+
+## Unboxing
+
+É o processo inverso, ou seja, a conversão de um objeto tipo referência para um tipo valor compatível
+Ex.:
+int y = (int) obj  -> criará no stack a variável y e atribuirá a ela o valor de obj, que e um valor de referência
+
+## Wrapper classes
+
+Classes equivalentes aos tipos primitivos
+
+Boxing e unboxing é natural na linguagem
+Uso comum: campos de entidades em sistemas de informação (IMPORTANTE)
+    Pois tipos referência aceitam valor null e usufruem dos recursos de OO
+
+                                       Object
+                                         |
+         ----------------------------------------------------------------
+         |                              |                               |
+       Number                        Boolean                        Character
+         |
+         |
+  -------------------------------------------------------------
+  |         |          |              |           |           |
+ Byte     Short     Integer         Long        Float       Double

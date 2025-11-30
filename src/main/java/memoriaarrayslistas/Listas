@@ -1,0 +1,20 @@
+Referência: https://docs.oracle.com/javase/10/docs/api/java/util/List.html
+
+Listas
+
+Listas são uma estrutura de dados:
+    - Homogênea(dados do mesmo tipo)
+    - Ordenada (elementos são acessados por meio de posições Ex.: 0, 1, 2)
+    - Inicia vazia, e seus elementos são alocados sob demanda
+        Obs.: Difere do vetor pois o mesmo necessita ser alocado com a quantidade de elementos
+    - Cada elemento ocupa um "nó" da lista
+
+
+Tipo (interface): List              Interface serão abordadas mais adiante, é um tipo que define apenas as especificações das operações
+Precisa de Classes que implementam essas interfaces: ArrayList, LinkedList, etc...
+Instância:
+
+
+Vantagens: Tamanho variável, facilidade de se realizar inserções e deleções
+
+Desvantagens: Acesso sequencial aos elementos
